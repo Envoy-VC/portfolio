@@ -8,7 +8,19 @@ const config: Config = {
 		'./sections/**/*.{js,ts,jsx,tsx,mdx}',
 	],
 	theme: {
-		extend: {},
+		extend: {
+			colors: {
+				primary: '#64FFDA',
+				textPrimary: '#CCD6F6',
+				textSecondary: '#8892B0',
+			},
+			fontFamily: {
+				calibreRegular: ['Calibre Regular', 'sans-serif'],
+				calibreMedium: ['Calibre Medium', 'sans-serif'],
+				calibreSemibold: ['Calibre Semibold', 'sans-serif'],
+				sfMono: ['SF Mono', 'sans-serif'],
+			},
+		},
 	},
 	plugins: [],
 };
