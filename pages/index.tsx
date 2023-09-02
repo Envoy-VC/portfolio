@@ -2,14 +2,22 @@ import React from 'react';
 
 import { Navbar } from '@/components';
 
-import { Inter } from 'next/font/google';
-const inter = Inter({ subsets: ['latin'] });
+// Sidebar Context
+export const SidebarContext = React.createContext<{
+	menuOpen: boolean;
+	setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}>({
+	menuOpen: false,
+	setMenuOpen: () => {},
+});
 
 const Home = () => {
+	const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 	return (
-		<div className={``}>
+		<SidebarContext.Provider value={{ menuOpen, setMenuOpen }}>
 			<Navbar />
-		</div>
+			<div className={`${menuOpen && 'blur-sm'}`}>aaaaaaaaaaaaaaaaa</div>
+		</SidebarContext.Provider>
 	);
 };
 
