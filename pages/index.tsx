@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Navbar } from '@/components';
+import { Hero } from '@/sections';
 
 // Sidebar Context
 export const SidebarContext = React.createContext<{
@@ -16,7 +17,7 @@ const Home = () => {
 	return (
 		<SidebarContext.Provider value={{ menuOpen, setMenuOpen }}>
 			<Navbar />
-			<div>aaaaaaaaaaaaaaaaa</div>
+			<Hero />
 		</SidebarContext.Provider>
 	);
 };
