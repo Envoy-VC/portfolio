@@ -15,12 +15,8 @@ const Home = () => {
 	const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 	return (
 		<SidebarContext.Provider value={{ menuOpen, setMenuOpen }}>
-			<div className='relative w-full'>
-				<Navbar />
-				<div className={`${menuOpen && 'blur-sm'} h-[100rem]`}>
-					aaaaaaaaaaaaaaaaa
-				</div>
-			</div>
+			<Navbar />
+			<div>aaaaaaaaaaaaaaaaa</div>
 		</SidebarContext.Provider>
 	);
 };

@@ -11,15 +11,12 @@ import {
 // Components
 import Sidebar from '../sidebar';
 
+// Data
+import { NavbarLinks } from '@/data';
+
 // Assets
 import Hexagon from '@/public/hexagon.png';
 import Logo from '@/public/logo.png';
-
-// Types
-interface NavbarLink {
-	title: string;
-	href: string;
-}
 
 const Navbar = () => {
 	const { scrollY } = useScroll();
@@ -39,9 +36,33 @@ const Navbar = () => {
 		hidden: { opacity: 0, y: '-100%' },
 	};
 
+	const container: Variants = {
+		hidden: { opacity: 1, scale: 0 },
+		visible: {
+			opacity: 1,
+			scale: 1,
+			transition: {
+				delayChildren: 0.3,
+				staggerChildren: 0.2,
+			},
+		},
+	};
+
+	const item: Variants = {
+		hidden: { y: -30, opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				type: 'spring',
+				bounce: 0.4,
+			},
+		},
+	};
+
 	return (
 		<motion.nav
-			className='sticky top-0 flex w-full flex-row items-center justify-between px-8 py-7 sm:px-12 bg-overlay'
+			className='bg-overlay sticky top-0 flex w-full flex-row items-center justify-between px-8 py-7 sm:px-12'
 			variants={variants}
 			animate={hidden ? 'hidden' : 'visible'}
 			transition={{ ease: 'easeInOut', duration: 0.4 }}
@@ -65,11 +86,17 @@ const Navbar = () => {
 					className='absolute transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'
 				/>
 			</Link>
-			<div className='hidden flex-row items-center gap-8 font-sfMono sm:flex'>
+			<motion.div
+				className='hidden flex-row items-center gap-8 font-sfMono sm:flex'
+				variants={container}
+				initial='hidden'
+				animate='visible'
+			>
 				{NavbarLinks.map((link, index) => (
-					<div
+					<motion.div
 						className='group flex flex-row  items-center gap-1 text-sm decoration-primary'
 						key={index}
+						variants={item}
 					>
 						<span className='text-primary'>{`0${index + 1}.`}</span>
 						<Link
@@ -78,36 +105,20 @@ const Navbar = () => {
 						>
 							{link.title}
 						</Link>
-					</div>
+					</motion.div>
 				))}
-				<div className='group rounded-sm bg-primary'>
+				<motion.div
+					className='group rounded-md bg-primary'
+					variants={item}
+				>
 					<button className='rounded-sm border-[1px] border-primary bg-[#0a192f] p-2 px-4 text-sm text-primary transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'>
 						Resume
 					</button>
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 			<Sidebar />
 		</motion.nav>
 	);
 };
-
-const NavbarLinks: NavbarLink[] = [
-	{
-		title: 'About',
-		href: '#about',
-	},
-	{
-		title: 'Blog',
-		href: '#blog',
-	},
-	{
-		title: 'Work',
-		href: '#work',
-	},
-	{
-		title: 'Contact',
-		href: '#contact',
-	},
-];
 
 export default Navbar;
