@@ -30,11 +30,11 @@ const Hero = () => {
 
 	return (
 		<section
-			className='mx-auto h-[70vh] max-w-screen-lg px-8 sm:px-0'
+			className='mx-auto h-[70vh] max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0'
 			id='#'
 		>
 			<motion.div
-				className='flex h-full flex-col justify-center gap-5'
+				className='flex h-full flex-col justify-center gap-6'
 				variants={container}
 				initial='hidden'
 				animate='visible'
@@ -60,7 +60,7 @@ const Hero = () => {
 					</motion.h2>
 				</div>
 				<motion.p
-					className='max-w-lg font-calibreMedium text-lg text-textSecondary '
+					className='max-w-lg font-calibreMedium text-[20px] text-textSecondary '
 					variants={item}
 				>
 					{HeroSectionDetails.bio}

@@ -21,6 +21,8 @@ export const NavbarLinks: NavbarLink[] = [
 
 export const HeroSectionDetails = {
 	name: 'Vedant Chainani.',
-	tagline: ['I build web3 projects', 'I write technical articles'],
+	tagline: ['I build awesome web3 projects.', 'I write technical articles.'],
 	bio: `I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at Upstatement.`,
 };
+
+export const SocialLinksCoverDetails = [];
