@@ -24,10 +24,10 @@ const About = () => {
 					<div className='ml-4 w-24 border-t-[1px] border-[#233554] sm:w-48' />
 				</div>
 				<div className='flex flex-col items-center gap-16 sm:items-start xl:flex-row'>
-					<p className='max-w-md whitespace-pre-wrap font-calibreRegular text-xl leading-6 text-textSecondary'>
+					<p className='max-w-md whitespace-pre-wrap font-calibreRegular text-xl leading-6 text-textSecondary order-1 sm:order-0'>
 						{AboutMeDetails.about}
 					</p>
-					<div className='group h-fit w-fit'>
+					<div className='group h-fit w-fit order-0 sm:order-1 my-8'>
 						<div className='rounded-md border-2 border-primary transition-all duration-300 ease-in-out group-hover:translate-x-2 group-hover:translate-y-2'>
 							<div className='w-fit -translate-x-3 -translate-y-3 rounded-md bg-[#42c7a8] transition-all duration-300 ease-in-out group-hover:-translate-x-7 group-hover:-translate-y-7'>
 								<Image
