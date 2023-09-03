@@ -60,63 +60,83 @@ const Navbar = () => {
 		},
 	};
 
+	const navVariant: Variants = {
+		hidden: { y: '-100%', opacity: 0 },
+		visible: {
+			y: 0,
+			opacity: 1,
+			transition: {
+				duration: 0.3,
+			},
+		},
+	};
+
 	return (
 		<motion.nav
-			className='bg-overlay sticky top-0 flex w-full flex-row items-center justify-between px-8 py-7 sm:px-12'
+			className='sticky top-0 bg-overlay px-8 py-7 sm:px-12'
 			variants={variants}
 			animate={hidden ? 'hidden' : 'visible'}
 			transition={{ ease: 'easeInOut', duration: 0.4 }}
 		>
-			<Link
-				className='group relative flex select-none items-center justify-center'
-				href='/'
-			>
-				<Image
-					src={Hexagon}
-					width={48}
-					height={48}
-					alt='hexagon'
-					className='transition-all duration-300 ease-in-out group-hover:scale-[96%]'
-				/>
-				<Image
-					src={Logo}
-					width={48}
-					height={48}
-					alt='logo'
-					className='absolute transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'
-				/>
-			</Link>
 			<motion.div
-				className='hidden flex-row items-center gap-8 font-sfMono sm:flex'
-				variants={container}
+				className='flex w-full flex-row items-center justify-between'
 				initial='hidden'
 				animate='visible'
+				variants={navVariant}
 			>
-				{NavbarLinks.map((link, index) => (
+				<Link
+					className='group relative flex select-none items-center justify-center'
+					href='/'
+				>
+					<Image
+						src={Hexagon}
+						width={48}
+						height={48}
+						alt='hexagon'
+						className='transition-all duration-300 ease-in-out group-hover:scale-[98%] group-hover:-translate-y-[2px]'
+					/>
+					<Image
+						src={Logo}
+						width={48}
+						height={48}
+						alt='logo'
+						className='absolute transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'
+					/>
+				</Link>
+				<motion.div
+					className='hidden flex-row items-center gap-8 font-sfMono sm:flex'
+					variants={container}
+					initial='hidden'
+					animate='visible'
+				>
+					{NavbarLinks.map((link, index) => (
+						<motion.div
+							className='group flex flex-row  items-center gap-1 text-sm decoration-primary'
+							key={index}
+							variants={item}
+						>
+							<span className='text-primary'>{`0${
+								index + 1
+							}.`}</span>
+							<Link
+								className='text-textPrimary transition-all duration-300 ease-in-out group-hover:text-primary'
+								href={link.href}
+							>
+								{link.title}
+							</Link>
+						</motion.div>
+					))}
 					<motion.div
-						className='group flex flex-row  items-center gap-1 text-sm decoration-primary'
-						key={index}
+						className='group rounded-sm bg-primary'
 						variants={item}
 					>
-						<span className='text-primary'>{`0${index + 1}.`}</span>
-						<Link
-							className='text-textPrimary transition-all duration-300 ease-in-out group-hover:text-primary'
-							href={link.href}
-						>
-							{link.title}
-						</Link>
+						<button className='rounded-sm border-[1px] border-primary bg-[#0a192f] p-2 px-4 text-sm text-primary transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'>
+							Resume
+						</button>
 					</motion.div>
-				))}
-				<motion.div
-					className='group rounded-md bg-primary'
-					variants={item}
-				>
-					<button className='rounded-sm border-[1px] border-primary bg-[#0a192f] p-2 px-4 text-sm text-primary transition-all duration-300 ease-in-out group-hover:-translate-x-1 group-hover:-translate-y-1'>
-						Resume
-					</button>
 				</motion.div>
+				<Sidebar />
 			</motion.div>
-			<Sidebar />
 		</motion.nav>
 	);
 };
