@@ -49,3 +49,22 @@ body::-webkit-scrollbar-thumb {
 	background: #495670;
 	border-radius: 12px;
 }
+
+.animate-blink {
+	animation: blink 0.8s linear infinite;
+}
+
+@keyframes blink {
+	0% {
+		opacity: 100%;
+	}
+	30% {
+		opacity: 100%;
+	}
+	50% {
+		opacity: 0%;
+	}
+	80% {
+		opacity: 0%;
+	}
+}

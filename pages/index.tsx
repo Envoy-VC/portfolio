@@ -8,8 +8,8 @@ const Home = () => {
 	return (
 		<>
 			<Sidebar />
+			<SocialLinksCover />
 			<div className={`${menuOpen ? 'blur-sm' : 'blur-none'}`}>
-				<SocialLinksCover />
 				<Navbar />
 				<Hero />
 				<About />

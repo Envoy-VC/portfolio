@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
+import Typewriter from 'typewriter-effect';
 
 // Data
 import { HeroSectionDetails } from '@/data';
@@ -30,7 +31,7 @@ const Hero = () => {
 
 	return (
 		<section
-			className='mx-auto max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0 my-64'
+			className='mx-auto my-64 max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0'
 			id='#'
 		>
 			<motion.div
@@ -55,8 +56,15 @@ const Hero = () => {
 					<motion.h2
 						className='font-black leading-[1.1] text-textSecondary'
 						variants={item}
+						id='typewriter'
 					>
-						{HeroSectionDetails.tagline.at(0)}
+						<Typewriter
+							options={{
+								strings: HeroSectionDetails.tagline,
+								autoStart: true,
+								loop: true,
+							}}
+						/>
 					</motion.h2>
 				</div>
 				<motion.p
