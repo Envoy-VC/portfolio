@@ -56,7 +56,7 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
 	};
 
 	return (
-		<div onClick={onClick} className='z-[11]'>
+		<div onClick={onClick} className='z-[100]'>
 			<motion.svg
 				width='36'
 				height='22'

@@ -30,7 +30,7 @@ const Hero = () => {
 
 	return (
 		<section
-			className='mx-auto h-[70vh] max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0'
+			className='mx-auto max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0 my-64'
 			id='#'
 		>
 			<motion.div

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouter } from 'next/router';
-import { SidebarContext } from '@/pages';
+import { SidebarContext } from '@/pages/_app';
 import { AnimatePresence, motion, Variants } from 'framer-motion';
 
 // Hooks
@@ -79,7 +79,7 @@ const Sidebar = () => {
 								delay: 0.5,
 							},
 						}}
-						className='fixed right-0 top-0 z-[11] h-screen w-full max-w-sm bg-[#112240]'
+						className='fixed right-0 top-0 z-[100] h-screen w-full max-w-sm bg-[#112240]'
 					>
 						<motion.div
 							className='flex h-full flex-col items-center justify-center gap-6'

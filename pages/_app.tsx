@@ -2,10 +2,20 @@ import '@/styles/globals.css';
 import React from 'react';
 import type { AppProps } from 'next/app';
 
-import { Loader } from '@/components';
+import { Loader, Navbar } from '@/components';
+
+// Sidebar Context
+export const SidebarContext = React.createContext<{
+	menuOpen: boolean;
+	setMenuOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}>({
+	menuOpen: false,
+	setMenuOpen: () => {},
+});
 
 export default function App({ Component, pageProps }: AppProps) {
 	const [isMounted, setIsMounted] = React.useState<boolean>(false);
+	const [menuOpen, setMenuOpen] = React.useState<boolean>(false);
 
 	React.useEffect(() => {
 		setTimeout(() => {
@@ -13,5 +23,12 @@ export default function App({ Component, pageProps }: AppProps) {
 		}, 2000);
 	}, [isMounted]);
 
-	return isMounted ? <Component {...pageProps} /> : <Loader />;
+	return (
+		<SidebarContext.Provider value={{ menuOpen, setMenuOpen }}>
+			<>
+				<Navbar />
+				<Component {...pageProps} />
+			</>
+		</SidebarContext.Provider>
+	);
 }
