@@ -56,7 +56,7 @@ const HamburgerButton = ({ isOpen = false, onClick }: Props) => {
 	};
 
 	return (
-		<div onClick={onClick}>
+		<div onClick={onClick} className='flex sm:hidden'>
 			<motion.svg
 				width='36'
 				height='22'

@@ -74,31 +74,18 @@ const SocialLinksCover = () => {
 
 	return (
 		<motion.div
-			className='hidden h-screen w-full md:flex fixed'
+			className='fixed bottom-0 z-[101] hidden md:flex'
 			initial='hidden'
 			animate='visible'
 			variants={container}
 		>
-			<div className='flex w-full items-end justify-between px-16'>
-				<div className='flex flex-col items-center gap-6'>
-					<div className='flex flex-col items-center gap-5'>
-						{SocialLinks.map((link, index) => (
-							<SocialLinksItem key={index} {...link} />
-						))}
-					</div>
-					<div className='h-20 border-r-[1px] border-textSecondary' />
+			<div className='left-0 flex flex-col items-center gap-6 px-16'>
+				<div className='flex flex-col items-center gap-5'>
+					{SocialLinks.map((link, index) => (
+						<SocialLinksItem key={index} {...link} />
+					))}
 				</div>
-				<div className='flex w-fit flex-col items-center gap-6'>
-					<Link
-						className='absolute bottom-52 rotate-90 text-textSecondary transition-all duration-300 ease-in-out hover:-translate-y-1 hover:text-primary'
-						href='mailto:vedantchainani1084@gmail.com'
-						target='_blank'
-						rel='noopener noreferrer'
-					>
-						vedantchainani1084@gmail.com
-					</Link>
-					<div className='h-20 border-r-[1px] border-textSecondary' />
-				</div>
+				<div className='h-20 border-r-[1px] border-textSecondary' />
 			</div>
 		</motion.div>
 	);

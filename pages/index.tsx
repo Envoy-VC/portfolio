@@ -1,6 +1,11 @@
 import React from 'react';
 import { SidebarContext } from './_app';
-import { Navbar, SocialLinksCover, Sidebar } from '@/components';
+import {
+	Navbar,
+	SocialLinksCover,
+	EmailContactCover,
+	Sidebar,
+} from '@/components';
 import { Hero, About } from '@/sections';
 
 const Home = () => {
@@ -9,6 +14,7 @@ const Home = () => {
 		<>
 			<Sidebar />
 			<SocialLinksCover />
+			<EmailContactCover />
 			<div className={`${menuOpen ? 'blur-sm' : 'blur-none'}`}>
 				<Navbar />
 				<Hero />

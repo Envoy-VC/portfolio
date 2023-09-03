@@ -32,4 +32,12 @@ Fast-forward to today, and I've had the privilege of working at an advertising a
 I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
 
 Here are a few technologies I've been working with recently:`,
+	skills: [
+		'Next.js',
+		'TypeScript',
+		'Tailwind CSS',
+		'Web3',
+		'Ethereum',
+		'GraphQL',
+	],
 };

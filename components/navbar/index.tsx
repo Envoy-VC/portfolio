@@ -120,7 +120,6 @@ const Navbar = () => {
 					</button>
 				</motion.div>
 			</motion.div>
-
 			<HamburgerButton
 				isOpen={menuOpen}
 				onClick={() => setMenuOpen(!menuOpen)}
