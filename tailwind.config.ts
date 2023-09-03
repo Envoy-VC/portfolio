@@ -10,6 +10,7 @@ const config: Config = {
 	theme: {
 		extend: {
 			colors: {
+				overlay: '#0a192f',
 				primary: '#64FFDA',
 				textPrimary: '#CCD6F6',
 				textSecondary: '#8892B0',

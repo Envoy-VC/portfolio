@@ -33,3 +33,18 @@ body,
 	background: #233554;
 	color: #ccd6f6;
 }
+
+/* Custom Scrollbar */
+
+body::-webkit-scrollbar {
+	width: 5px;
+}
+
+body::-webkit-scrollbar-track {
+	background: #0a192f;
+}
+
+body::-webkit-scrollbar-thumb {
+	background: #495670;
+	border-radius: 12px;
+}
