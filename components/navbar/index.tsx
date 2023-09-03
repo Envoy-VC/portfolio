@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SidebarContext } from '@/pages/_app';
 import {
 	useScroll,
 	motion,
@@ -9,7 +10,7 @@ import {
 } from 'framer-motion';
 
 // Components
-import Sidebar from '../sidebar';
+import HamburgerButton from '../sidebar/hamburger-button';
 
 // Data
 import { NavbarLinks } from '@/data';
@@ -20,6 +21,7 @@ import Logo from '@/public/logo.png';
 
 const Navbar = () => {
 	const { scrollY } = useScroll();
+	const { menuOpen, setMenuOpen } = React.useContext(SidebarContext);
 	const [hidden, setHidden] = React.useState<boolean>(false);
 
 	useMotionValueEvent(scrollY, 'change', (latest) => {
@@ -118,7 +120,11 @@ const Navbar = () => {
 					</button>
 				</motion.div>
 			</motion.div>
-			<Sidebar />
+
+			<HamburgerButton
+				isOpen={menuOpen}
+				onClick={() => setMenuOpen(!menuOpen)}
+			/>
 		</motion.nav>
 	);
 };
