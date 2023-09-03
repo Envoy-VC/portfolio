@@ -86,7 +86,7 @@ const Sidebar = () => {
 								delay: 0.5,
 							},
 						}}
-						className='fixed right-0 top-0 z-[11] h-screen w-full max-w-sm bg-[#112240]'
+						className='fixed right-0 top-0 z-[11] h-screen w-full max-w-[284px] bg-[#112240]'
 					>
 						<>
 							<div className='flex justify-end px-8 py-7 sm:px-12'>
