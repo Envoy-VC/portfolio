@@ -30,10 +30,7 @@ const Hero = () => {
 	};
 
 	return (
-		<section
-			className='mx-auto my-64 max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0'
-			id='#'
-		>
+		<section className='mx-auto my-64 max-w-screen-sm px-8 lg:max-w-screen-md xl:max-w-screen-lg xl:px-0'>
 			<motion.div
 				className='flex h-full flex-col justify-center gap-6'
 				variants={container}

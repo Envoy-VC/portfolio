@@ -22,14 +22,15 @@ export const NavbarLinks: NavbarLink[] = [
 export const HeroSectionDetails = {
 	name: 'Vedant Chainani.',
 	tagline: ['I build awesome web3 projects.', 'I write technical articles.'],
-	bio: `I'm a software engineer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products at Upstatement.`,
+	bio: `I'm a Web3 developer and technical writer. I build awesome decentralized applications and write engaging articles. Currently learning more about web3 protocols and participating in hackathons.`,
 };
 
 export const AboutMeDetails = {
-	about: `Hello! My name is Brittany and I enjoy creating things that live on the internet. My interest in web development started back in 2012 when I decided to try editing custom Tumblr themes — turns out hacking together a custom reblog button taught me a lot about HTML & CSS!\n
-Fast-forward to today, and I've had the privilege of working at an advertising agency, a start-up, a huge corporation, and a student-led design studio. My main focus these days is building accessible, inclusive products and digital experiences at Upstatement for a variety of clients.
+	about: `Hi! I'm Vedant. My journey in the Web3 space began in 2021, inspired by the TV series "Silicon Valley." Since then, I've been diving deep into various protocols, learning their intricacies, and building different applications on top of them.
 
-I also recently launched a course that covers everything you need to build a web app with the Spotify API using Node & React.
+In addition to development, I also write technical articles on Web3 topics. Whether it's a deep dive into a specific protocol or a technical implementation guide, I cover a wide range of subjects to share knowledge with the community.
+
+Currently, I'm focused on learning more about the production-grade T3 stack and actively participating in hackathons to challenge myself and stay up-to-date with the latest advancements in the ecosystem.
 
 Here are a few technologies I've been working with recently:`,
 	skills: [
@@ -41,3 +42,15 @@ Here are a few technologies I've been working with recently:`,
 		'GraphQL',
 	],
 };
+
+`
+
+GM! I'm Vedant, and I love creating awesome Web3 applications on top of different protocols. My journey in the Web3 space began in 2021, inspired by the TV series "Silicon Valley." Since then, I've been diving deep into various protocols, learning their intricacies, and building different applications on top of them.
+
+In addition to development, I also write technical articles on Web3 topics. Whether it's a deep dive into a specific protocol or a technical implementation guide, I cover a wide range of subjects to share knowledge with the community.
+
+Currently, I'm focused on learning more about the production-grade T3 stack and actively participating in hackathons to challenge myself and stay up-to-date with the latest advancements in the Web3 ecosystem.
+
+
+
+`;

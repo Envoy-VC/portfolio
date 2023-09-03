@@ -13,8 +13,8 @@ import { PiTriangleFill } from 'react-icons/pi';
 const About = () => {
 	return (
 		<section
-			className='mx-auto my-64 max-w-screen-sm px-8 sm:my-96 xl:max-w-[840px] xl:px-0'
-			id='#about'
+			className='mx-auto max-w-screen-sm px-8 py-64 xl:max-w-[840px] xl:px-0'
+			id='about'
 		>
 			<div className='flex h-full flex-col justify-center gap-6'>
 				<div className='flex flex-row items-center gap-3 font-sfMono'>
