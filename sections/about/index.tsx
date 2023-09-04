@@ -74,8 +74,8 @@ const About = () => {
 								<Image
 									alt='Avatar'
 									src={Avatar.src}
-									height={300}
-									width={300}
+									height={350}
+									width={350}
 									className='aspect-[1/1] rounded-md object-cover opacity-60 grayscale transition-all duration-300 ease-in-out group-hover:opacity-100 group-hover:filter-none'
 								/>
 							</div>
