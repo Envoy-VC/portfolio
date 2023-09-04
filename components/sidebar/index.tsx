@@ -55,14 +55,6 @@ const Sidebar = () => {
 		},
 	};
 
-	React.useEffect(() => {
-		if (menuOpen) {
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.body.style.overflow = 'unset';
-		}
-	}, [menuOpen]);
-
 	return (
 		<div className='flex sm:hidden' ref={wrapperRef}>
 			<AnimatePresence>

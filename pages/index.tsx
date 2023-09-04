@@ -10,12 +10,26 @@ import { Hero, About } from '@/sections';
 
 const Home = () => {
 	const { menuOpen } = React.useContext(SidebarContext);
+	const [showBlurEffect, setShowBlurEffect] = React.useState<boolean>(false);
+
+	React.useEffect(() => {
+		if (menuOpen) {
+			document.body.style.overflow = 'hidden';
+			setShowBlurEffect(true);
+		} else {
+			document.body.style.overflow = 'unset';
+			setTimeout(() => {
+				setShowBlurEffect(false);
+			}, 500);
+		}
+	}, [menuOpen]);
+
 	return (
 		<>
 			<Sidebar />
 			<SocialLinksCover />
 			<EmailContactCover />
-			<div className={`${menuOpen ? 'blur-sm' : 'blur-none'}`}>
+			<div className={`${showBlurEffect ? 'blur-sm' : 'blur-none'}`}>
 				<Navbar />
 				<Hero />
 				<About />

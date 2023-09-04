@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { Variants, motion } from 'framer-motion';
 
 // Data
 import { AboutMeDetails } from '@/data';
@@ -11,12 +12,30 @@ import Avatar from '@/public/avatar.webp';
 import { PiTriangleFill } from 'react-icons/pi';
 
 const About = () => {
+	const AboutVariants: Variants = {
+		hidden: { opacity: 0, y: 50 },
+		visible: {
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: 0.3,
+				type: 'tween',
+				duration: 1,
+			},
+		},
+	};
 	return (
 		<section
-			className='mx-auto max-w-screen-sm px-8 py-64 xl:max-w-[840px] xl:px-0'
+			className='mx-auto max-w-screen-sm px-8 py-24 sm:py-64 xl:max-w-[840px] xl:px-0'
 			id='about'
 		>
-			<div className='flex h-full flex-col justify-center gap-6'>
+			<motion.div
+				className='flex h-full flex-col justify-center gap-6'
+				initial='hidden'
+				whileInView='visible'
+				viewport={{ once: true }}
+				variants={AboutVariants}
+			>
 				<div className='flex flex-row items-center gap-3 font-sfMono'>
 					<span className='text-xl text-primary sm:text-2xl'>
 						01.
@@ -63,7 +82,7 @@ const About = () => {
 						</div>
 					</div>
 				</div>
-			</div>
+			</motion.div>
 		</section>
 	);
 };
